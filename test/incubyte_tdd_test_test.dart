@@ -21,4 +21,8 @@ void main() {
   test('"//;\n1;2" where the delimiter is ";" should return 3', () {
     expect(add('//;\n1;2'), 3);
   });
+
+  test('"-1,2,-3" throws exception', () {
+    expect(() => add('-1,2,-3'), throwsFormatException);
+  });
 }

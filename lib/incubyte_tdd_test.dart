@@ -13,8 +13,22 @@ int add(String numbers) {
     numbersList = numbers.split(RegExp(r',|\n'));
   }
 
+  bool negativeNumber = false;
+
   for (var number in numbersList) {
+    final intNum = int.parse(number);
+
+    if (intNum < 0) {
+      negativeNumber = true;
+      break;
+    }
+
     sum += int.parse(number);
   }
+
+  if (negativeNumber) {
+    throw FormatException('Negative numbers are not allowed');
+  }
+
   return sum;
 }
