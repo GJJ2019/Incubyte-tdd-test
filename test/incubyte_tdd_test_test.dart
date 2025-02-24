@@ -17,4 +17,8 @@ void main() {
   test('"1\n2,3" should return 6', () {
     expect(add('1\n2,3'), 6);
   });
+
+  test('"//;\n1;2" where the delimiter is ";" should return 3', () {
+    expect(add('//;\n1;2'), 3);
+  });
 }
