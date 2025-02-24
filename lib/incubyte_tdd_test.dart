@@ -3,7 +3,7 @@ int add(String numbers) {
     return 0;
   }
   var sum = 0;
-  var numbersList = numbers.split(",");
+  var numbersList = numbers.split(RegExp(r',|\n'));
   for (var number in numbersList) {
     sum += int.parse(number);
   }
