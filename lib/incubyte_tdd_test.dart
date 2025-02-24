@@ -3,20 +3,18 @@ int add(String numbers) {
     return 0;
   }
   var sum = 0;
+  List<String> numbersList;
 
   if (numbers.startsWith('//')) {
     var delimiter = numbers[2];
     numbers = numbers.split('\n')[1];
-    var numbersList = numbers.split(delimiter);
-    for (var number in numbersList) {
-      sum += int.parse(number);
-    }
+    numbersList = numbers.split(delimiter);
   } else {
-    var numbersList = numbers.split(RegExp(r',|\n'));
-    for (var number in numbersList) {
-      sum += int.parse(number);
-    }
+    numbersList = numbers.split(RegExp(r',|\n'));
   }
 
+  for (var number in numbersList) {
+    sum += int.parse(number);
+  }
   return sum;
 }
