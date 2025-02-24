@@ -25,4 +25,8 @@ void main() {
   test('"-1,2,-3" throws exception', () {
     expect(() => add('-1,2,-3'), throwsFormatException);
   });
+
+  test('"-1,2,-3" throws exception with all negative', () {
+    expect(() => add('-1,2,-3'), throwsFormatException);
+  });
 }
